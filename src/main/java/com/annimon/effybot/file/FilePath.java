@@ -7,6 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.File;
 
 public class FilePath {
+    private FilePath() {}
 
     public static String inputDir() {
         return "input";
@@ -26,7 +27,7 @@ public class FilePath {
 
     public static String generateFilename(String fileId, String filename) {
         final var ext = FilenameUtils.getExtension(filename);
-        return "%d_%d.%s".formatted(System.currentTimeMillis(), Math.abs(fileId.hashCode()), ext);
+        return "%d_%d.%s".formatted(System.currentTimeMillis(), fileId.hashCode() & 0x7FFFFFFF, ext);
     }
 
     public static String defaultFilename(@NotNull FileType fileType) {

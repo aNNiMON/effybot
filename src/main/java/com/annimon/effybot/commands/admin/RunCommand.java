@@ -70,7 +70,7 @@ public class RunCommand implements TextCommand {
 
     private static List<String> toCommands(String command) {
         final var commands = new ArrayList<String>();
-        final var m = Pattern.compile("([^\"]\\S*|\".+?\")\\s*").matcher(command);
+        final var m = Pattern.compile("([^\"]\\S*|\"[^\"]++\")\\s*").matcher(command);
         while (m.find()) {
             commands.add(m.group(1));
         }

@@ -194,6 +194,7 @@ public class FFmpegCommandBuilder implements Visitor<MediaSession> {
                 additionalExtension = ".jpg";
                 recipe = OutputFormat.AUDIO_SPECTRUM;
             }
+            default -> throw new IllegalStateException("Not supported output format");
         }
 
         if (localFilename.toLowerCase(Locale.ENGLISH).endsWith(additionalExtension)) {

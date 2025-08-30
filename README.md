@@ -31,7 +31,7 @@ cp effybot.yaml.template effybot.yaml
 vim effybot.yaml
 mkdir {input,output}
 # Run
-java -jar ./build/libs/effybot-1.2-SNAPSHOT-all.jar
+java -jar ./build/libs/effybot-1.3-SNAPSHOT-all.jar
 ```
 
 

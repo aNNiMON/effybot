@@ -1,6 +1,8 @@
 package com.annimon.effybot.session;
 
 public class FileTypes {
+    private FileTypes() {}
+
     public static boolean canContainAudio(FileType type) {
         return switch (type) {
             case AUDIO, VIDEO, VIDEO_NOTE, VOICE -> true;

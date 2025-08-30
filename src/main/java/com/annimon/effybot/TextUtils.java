@@ -4,6 +4,8 @@ import java.text.DecimalFormat;
 import java.util.StringJoiner;
 
 public class TextUtils {
+    private TextUtils() {}
+
     public static boolean isNotEmpty(String str) {
         return (str != null) && (!str.isEmpty());
     }
