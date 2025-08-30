@@ -1,11 +1,11 @@
-FROM gradle:8.10.2-jdk17-alpine AS cache
+FROM gradle:9.0.0-jdk17-alpine AS cache
 RUN mkdir -p /home/gradle/cache_home
 ENV GRADLE_USER_HOME=/home/gradle/cache_home
 COPY build.gradle /home/gradle/java-code/
 WORKDIR /home/gradle/java-code
 RUN GRADLE_OPTS="-Xmx256m" gradle build --build-cache --stacktrace -i --no-daemon
 
-FROM gradle:8.10.2-jdk17-alpine AS builder
+FROM gradle:9.0.0-jdk17-alpine AS builder
 COPY --from=cache /home/gradle/cache_home /home/gradle/.gradle
 COPY . /usr/src/java-code
 WORKDIR /usr/src/java-code

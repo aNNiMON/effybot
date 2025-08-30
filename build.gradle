@@ -1,18 +1,22 @@
 plugins {
-    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'com.gradleup.shadow' version "9.1.0"
     id 'java'
     id 'application'
 }
 
-mainClassName = 'com.annimon.ffmpegbot.Main'
 group 'com.annimon'
 version '1.2-SNAPSHOT'
 
-sourceCompatibility = 17
-targetCompatibility = 17
-compileJava.options.encoding = 'UTF-8'
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
 
-tasks.withType(JavaCompile) {
+application {
+    mainClass = 'com.annimon.ffmpegbot.Main'
+}
+
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
@@ -21,7 +25,7 @@ repositories {
 }
 
 dependencies {
-    implementation ('com.annimon:tgbots-module:7.10.0') {
+    implementation ('com.annimon:tgbots-module:8.0.0') {
         exclude group: 'org.telegram', module: 'telegrambots-webhook'
     }
     implementation 'org.slf4j:slf4j-simple:2.0.13'
