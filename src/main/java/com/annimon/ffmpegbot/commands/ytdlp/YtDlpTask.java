@@ -6,7 +6,6 @@ import com.annimon.ffmpegbot.session.YtDlpSession;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.IOException;
-import java.util.Arrays;
 
 public class YtDlpTask {
 

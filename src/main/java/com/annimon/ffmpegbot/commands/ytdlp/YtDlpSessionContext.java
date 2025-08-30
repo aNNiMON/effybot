@@ -5,7 +5,7 @@ import com.annimon.tgbotsmodule.commands.context.RegexMessageContext;
 import com.annimon.tgbotsmodule.services.CommonAbsSender;
 import org.telegram.telegrambots.meta.api.objects.message.Message;
 
-interface YtDlpSessionContext {
+sealed interface YtDlpSessionContext permits CallbackYtDlpSessionContext, RegexYtDlpSessionContext {
     Message message();
 
     CommonAbsSender sender();
