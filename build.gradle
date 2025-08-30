@@ -13,7 +13,7 @@ java {
 }
 
 application {
-    mainClass = 'com.annimon.ffmpegbot.Main'
+    mainClass = 'com.annimon.effybot.Main'
 }
 
 tasks.withType(JavaCompile).configureEach {

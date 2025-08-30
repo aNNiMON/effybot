@@ -1,4 +1,4 @@
-# ffmpegbot
+# effybot (formerly ffmpegbot)
 
 Telegram Bot for re-encoding media
 
@@ -27,17 +27,17 @@ Telegram Bot for re-encoding media
 # Build
 ./gradlew shadowJar
 # Config
-cp ffmpegbot.yaml.template ffmpegbot.yaml
-vim ffmpegbot.yaml
+cp effybot.yaml.template effybot.yaml
+vim effybot.yaml
 mkdir {input,output}
 # Run
-java -jar ./build/libs/ffmpegbot-1.2-SNAPSHOT-all.jar
+java -jar ./build/libs/effybot-1.2-SNAPSHOT-all.jar
 ```
 
 
 ### Using Docker
 
-Note: FFmpeg binary might be installed with limited number of filters and codecs. Some bot features might not work (Audio pitch, robot effect, etc).
+Note: FFmpeg binary might be installed with limited number of filters and codecs. Some bot features might not work (Audio pitch, robot effect, etc.).
 
 ```bash
 docker run -d -t -i \
@@ -46,7 +46,7 @@ docker run -d -t -i \
   -e APP_HASH='...' \
   -e SUPERUSERS='12345' \
   -e ALLOWED_USERS='12346,12347' \
-  --name ffmpegbot ghcr.io/annimon/ffmpegbot:latest
+  --name effybot ghcr.io/annimon/effybot:latest
 ```
 
 #### Environment variables

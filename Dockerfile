@@ -20,8 +20,8 @@ RUN apk add --no-cache py3-pip ffmpeg \
   && python3 -m pip install --break-system-packages --no-cache-dir --upgrade \
        wheel yt-dlp pyrogram TgCrypto
 WORKDIR /app
-COPY --from=builder /usr/src/java-code/build/libs/ffmpegbot-1.2-SNAPSHOT-all.jar ffmpegbot.jar
+COPY --from=builder /usr/src/java-code/build/libs/effybot-1.2-SNAPSHOT-all.jar effybot.jar
 RUN mkdir input && mkdir output
 COPY pytgfile.py .
-COPY ffmpegbot-docker.yaml .
-ENTRYPOINT ["java", "-jar", "/app/ffmpegbot.jar", "docker"]
+COPY effybot-docker.yaml .
+ENTRYPOINT ["java", "-jar", "/app/effybot.jar", "docker"]
