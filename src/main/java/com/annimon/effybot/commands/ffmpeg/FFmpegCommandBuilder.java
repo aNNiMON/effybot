@@ -92,10 +92,10 @@ public class FFmpegCommandBuilder implements Visitor<MediaSession> {
             case AudioEffect.NOISE_REDUCTION_12 -> "afftdn=nr=12";
             case AudioEffect.PULSATOR -> "apulsator=mode=sine:hz=0.5";
             case AudioEffect.VIBRATO -> "vibrato=f=4";
-            default /* AudioEffect.ROBOT */ -> "afftfilt=\"" +
+            default /* AudioEffect.ROBOT */ -> "afftfilt=" +
                     "real='hypot(re,im)*sin(0)'" +
                     ":imag='hypot(re,im)*cos(0)'" +
-                    ":win_size=512:overlap=0.75\"";
+                    ":win_size=512:overlap=0.75";
         });
     }
 
