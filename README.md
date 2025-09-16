@@ -56,3 +56,7 @@ docker run -d -t -i \
  - `APP_HASH` — Telegram API app_hash
  - `SUPERUSERS` — Comma-separated list of superusers. Superuser can execute /run command
  - `ALLOWED_USERS` — Comma-separated list of allowed user ids
+
+## TUI version
+
+Terminal UI alternative: [effy](https://github.com/aNNiMON/effy)
